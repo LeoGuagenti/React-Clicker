@@ -11,20 +11,38 @@ class App extends React.Component{
       clicks: 0
     }
 
-    this.onClick = this.onClick.bind(this);
+    this.onClickAdd = this.onClickAdd.bind(this);
+    this.onClickSub = this.onClickSub.bind(this);
+    this.onClickZero = this.onClickZero.bind(this);
   }
 
-  onClick(){
+  onClickAdd(){
     this.setState({
       clicks: this.state.clicks + 1
+    });
+  }
+
+  onClickSub(){
+    this.setState({
+      clicks: this.state.clicks - 1
+    });
+  }
+
+  onClickZero(){
+    this.setState({
+      clicks: 0
     });
   }
 
   render(){
     return (
       <div class="container">
-       <Display count={this.state.clicks} />
-       <Button onClick={this.onClick} />
+        <Display count={this.state.clicks} />
+        <div class="controls">
+          <Button onClick={this.onClickAdd} content={'+'}/>
+          <Button onClick={this.onClickSub} content={'-'} />
+        </div>
+        <Button onClick={this.onClickZero} content={'↻'} width={300}/>
       </div>
     );
   }
