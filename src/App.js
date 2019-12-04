@@ -39,10 +39,10 @@ class App extends React.Component{
       <div class="container">
         <Display count={this.state.clicks} />
         <div class="controls">
-          <Button onClick={this.onClickAdd} content={'+'}/>
           <Button onClick={this.onClickSub} content={'-'} />
+          <Button onClick={this.onClickAdd} content={'+'}/>
+          <Button onClick={this.onClickZero} content={'↻'} width={300}/>
         </div>
-        <Button onClick={this.onClickZero} content={'↻'} width={300}/>
       </div>
     );
   }
